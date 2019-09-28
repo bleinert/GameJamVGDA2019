@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     Bullet bullet;
     [SerializeField]
-    Vector2 offset = new Vector2(0.2f, 0.2f);
+    Vector3 offset = new Vector3(1f, -0.1f, 0f);
     float delay = 0f;
     [SerializeField]
     float delayMax = .3f;
@@ -25,7 +25,7 @@ public class PlayerShoot : MonoBehaviour
             if (delay > delayMax)
             {
                 Debug.Log("Shoot");
-              //  Instantiate(bullet, transform.position, Quaternion.identity);
+                Instantiate(bullet, transform.position+offset, transform.rotation);
                 delay = 0;
             }
 
