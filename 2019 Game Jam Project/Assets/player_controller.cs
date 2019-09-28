@@ -5,7 +5,7 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
     // Start is called before the first frame update
-    float speed = 1f;
+    float speed = 5f;
     float characteraccel = 1.0f;
     public Rigidbody2D rb;
     Vector2 movement;
@@ -22,13 +22,13 @@ public class player_controller : MonoBehaviour
     void Update()
     {
     //    movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movement.y = Input.GetAxis("Vertical")*speed;
         flyVector = new Vector2(1 * flySpeed*Time.fixedDeltaTime, 0);
     }
 
     private void FixedUpdate()
     {
         movement += flyVector;
-        rb.MovePosition(rb.position + movement * speed * characteraccel * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * characteraccel * Time.fixedDeltaTime);
     }
 }
