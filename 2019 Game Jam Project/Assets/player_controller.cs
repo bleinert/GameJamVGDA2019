@@ -5,10 +5,13 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
     // Start is called before the first frame update
-    float speed = 10;
-    float characteraccel = 1.1f;
+    float speed = 5f;
+    float characteraccel = 1.0f;
     public Rigidbody2D rb;
     Vector2 movement;
+    [SerializeField]
+    float flySpeed = 1f;
+    Vector2 flyVector;
     
     void Start()
     {
@@ -18,13 +21,14 @@ public class player_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-
+    //    movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("Vertical")*speed;
+        flyVector = new Vector2(1 * flySpeed*Time.fixedDeltaTime, 0);
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * characteraccel * Time.fixedDeltaTime);
+        movement += flyVector;
+        rb.MovePosition(rb.position + movement * characteraccel * Time.fixedDeltaTime);
     }
 }
