@@ -22,7 +22,7 @@ public class DealDamage : MonoBehaviour
         var player = collision.GetComponent<IHealth>();
         if(player != null)
         {
-            player.RecieveDamage(10f);
+            player.RecieveDamage(1f);
         }
     }
 }
