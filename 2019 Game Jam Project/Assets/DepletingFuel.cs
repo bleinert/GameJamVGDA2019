@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reset_Stats : MonoBehaviour
+public class DepletingFuel : MonoBehaviour
 {
     // Start is called before the first frame update
     public PlayerStatsSO playerstats;
-    public 
-    void Start()
+   
+    // Update is called once per frame
+    void Update()
     {
-        playerstats.playerFuel= 50;
-        playerstats.playerHealth = 1;
-        playerstats.playerSpeed = 1;
-
-
-
+        playerstats.playerFuel -= 1 * Time.deltaTime;
     }
-
 }

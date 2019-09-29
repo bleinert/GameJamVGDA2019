@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotateWallCcw : MonoBehaviour
 {
     // Start is called before the first frame update
-    float accelz = 90f;
+    public float accelz = 90f;
     void Start()
     {
         

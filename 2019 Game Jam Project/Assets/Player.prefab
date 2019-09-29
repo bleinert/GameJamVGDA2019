@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3057466703531379938}
   - component: {fileID: 8905163008012591673}
   - component: {fileID: 2054270682407867414}
+  - component: {fileID: 653712706826052882}
+  - component: {fileID: 1663693636584048959}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -164,3 +166,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!114 &653712706826052882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506097165237629378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce97233c10e11604c83a60a5578b3779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1663693636584048959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506097165237629378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933eb8257c4ae6a469083d400d3f3d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6955083078632953223, guid: f6717f8f865c9664caed187a65d7ed6a, type: 3}
+  offset: {x: 1, y: -0.1, z: 0}
+  delayMax: 0.3
