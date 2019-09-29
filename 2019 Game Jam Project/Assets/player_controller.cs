@@ -12,23 +12,32 @@ public class player_controller : MonoBehaviour
     [SerializeField]
     float flySpeed = 1f;
     Vector2 flyVector;
-    
+    HealthController health;
     void Start()
     {
+        health = GetComponent<HealthController>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-    //    movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical")*speed;
-        flyVector = new Vector2(1 * flySpeed*Time.fixedDeltaTime, 0);
+        //    movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("Vertical") * speed;
+        flyVector = new Vector2(1 * flySpeed * Time.fixedDeltaTime, 0);
     }
 
     private void FixedUpdate()
     {
-        movement += flyVector;
-        rb.MovePosition(rb.position + movement * characteraccel * Time.fixedDeltaTime);
+        if (health.CurrentHealth >= 1)
+        {
+
+
+            movement += flyVector;
+            rb.MovePosition(rb.position + movement * characteraccel * Time.fixedDeltaTime);
+
+        }
+
     }
 }
+

@@ -26,7 +26,7 @@ public class PlayerDie : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(2f);
         Debug.Log("Loading Level");
-        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         render.enabled = true;
 
     }

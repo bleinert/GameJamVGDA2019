@@ -15,9 +15,11 @@ public class playerShoot : MonoBehaviour
     [SerializeField]
     AudioSource sound;
     public PlayerStatsSO player;
+    HealthController health;
     // Start is called before the first frame update
     void Start()
     {
+        health = GetComponent<HealthController>();
         delay = 0;
     }
 
@@ -28,7 +30,7 @@ public class playerShoot : MonoBehaviour
         velocity += transform.forward.normalized * 8f;
         if (Input.GetMouseButton(0))
         {
-            if (delay > delayMax)
+            if (delay > delayMax && health.CurrentHealth >= 1)
             {
                 Instantiate(bullet, velocity, transform.rotation);
                 delay = 0;
