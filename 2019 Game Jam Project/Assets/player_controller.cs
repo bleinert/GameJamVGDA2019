@@ -12,10 +12,13 @@ public class player_controller : MonoBehaviour
     [SerializeField]
     float flySpeed = 1f;
     Vector2 flyVector;
+    [SerializeField]
+    HealthController health;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<HealthController>();
     }
 
     // Update is called once per frame
@@ -28,9 +31,12 @@ public class player_controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        flyVector = Vector3.right*speed;
-       // movement += flyVector;
-        rb.velocity = movement+flyVector * characteraccel * Time.fixedDeltaTime;
-     //   rb.MovePosition(rb.position + movement * characteraccel * Time.fixedDeltaTime);
+        if (health.CurrentHealth >= 0)
+        {
+            flyVector = Vector3.right * speed;
+            // movement += flyVector;
+            rb.velocity = movement + flyVector * characteraccel * Time.fixedDeltaTime;
+            //   rb.MovePosition(rb.position + movement * characteraccel * Time.fixedDeltaTime);
+        }
     }
 }

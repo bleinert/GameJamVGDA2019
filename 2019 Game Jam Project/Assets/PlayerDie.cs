@@ -23,6 +23,7 @@ public class PlayerDie : MonoBehaviour
     IEnumerator LoadDelay()
     {
         render.enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(2f);
         Debug.Log("Loading Level");
         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);

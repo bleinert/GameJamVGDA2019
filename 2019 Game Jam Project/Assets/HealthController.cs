@@ -5,7 +5,8 @@ using System;
 
 public class HealthController : MonoBehaviour, IHealth
 {
-    public event Action OnDie = delegate { }; 
+    public event Action OnDie = delegate { };
+    public event Action OnHit = delegate { };
 
     [SerializeField]
     private float health = 1;
@@ -21,6 +22,7 @@ public class HealthController : MonoBehaviour, IHealth
             return;
         }
         health--;
+        OnHit();
         if(health <= 0)
         {
             Debug.Log("You Died");
