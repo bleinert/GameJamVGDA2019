@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Walldamage : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Walldamage : MonoBehaviour
 
             player.GetComponent<IHealth>().RecieveDamage(1);
 
+        }
+        else if(col.gameObject.tag.Equals("End Wall"))
+        {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }
     }
 }
