@@ -25,7 +25,7 @@ public class PlayerDie : MonoBehaviour
         render.enabled = false;
         yield return new WaitForSeconds(2f);
         Debug.Log("Loading Level");
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         render.enabled = true;
 
     }
