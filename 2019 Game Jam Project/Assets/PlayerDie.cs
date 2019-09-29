@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerDie : MonoBehaviour
 {
+    [SerializeField]
+    Canvas dieText;
     HealthController health;
     SpriteRenderer render;
     // Start is called before the first frame update
@@ -13,10 +16,12 @@ public class PlayerDie : MonoBehaviour
         health = GetComponent<HealthController>();
         health.OnDie += HandleDie;
         render = GetComponent<SpriteRenderer>();
+        dieText.enabled = false;
     }
 
     void HandleDie()
     {
+        dieText.enabled = true;
         StartCoroutine(LoadDelay());
     }
 
@@ -28,6 +33,6 @@ public class PlayerDie : MonoBehaviour
         Debug.Log("Loading Level");
         SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         render.enabled = true;
-
+        dieText.enabled = false;
     }
 }
