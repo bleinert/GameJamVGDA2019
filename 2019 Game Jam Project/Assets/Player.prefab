@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8671716247122569452}
   - component: {fileID: -6599585512525849915}
   - component: {fileID: 8296022845311322340}
+  - component: {fileID: 1027739149734096366}
   - component: {fileID: 3057466703531379938}
   - component: {fileID: 8905163008012591673}
   - component: {fileID: 2054270682407867414}
@@ -132,10 +133,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933eb8257c4ae6a469083d400d3f3d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6955083078632953223, guid: f6717f8f865c9664caed187a65d7ed6a, type: 3}
+  bullet: {fileID: 0}
+  offset: {x: 1, y: -0.1, z: 0}
+  delayMax: 0.3
+  sound: {fileID: 0}
+  player: {fileID: 0}
+--- !u!114 &1027739149734096366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506097165237629378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933eb8257c4ae6a469083d400d3f3d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
   offset: {x: 1, y: -0.1, z: 0}
   delayMax: 0.3
   sound: {fileID: 1422528764849140866}
+  player: {fileID: 11400000, guid: cd444e983fd2cae4f866597eeb46005c, type: 2}
 --- !u!50 &3057466703531379938
 Rigidbody2D:
   serializedVersion: 4
