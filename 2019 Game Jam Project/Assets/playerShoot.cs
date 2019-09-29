@@ -12,6 +12,9 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     float delayMax = .3f;
     Vector3 velocity;
+    [SerializeField]
+    AudioSource sound;
+    public PlayerStatsSO player;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,9 @@ public class PlayerShoot : MonoBehaviour
             {
                 Instantiate(bullet, velocity, transform.rotation);
                 delay = 0;
+                sound.Play();
+                player.playerFuel -= 2f;
+                
             }
 
         }

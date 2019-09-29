@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_collect_fuel : MonoBehaviour
+public class Walldamage : MonoBehaviour
 {
+
     // Start is called before the first frame update
-   public  PlayerStatsSO player;
-   
+    public GameObject player;
+
+  
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag.Equals("Player"))
+
+        if (col.gameObject.tag.Equals("Wall"))
         {
-            player.playerFuel += 20;
-            Destroy(gameObject);
+
+            player.GetComponent<IHealth>().RecieveDamage(1);
 
         }
     }
